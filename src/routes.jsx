@@ -1,28 +1,32 @@
-import { createBrowserRouter } from 'react-router-dom';
-import Home from './pages/Home';
-import Directors from './pages/Directors';
-import Actors from './pages/Actors';
-import Movie from './pages/Movie';
-import ErrorPage from './pages/ErrorPage';
+import { createBrowserRouter } from "react-router-dom";
+import Home from "./pages/Home";
+import Directors from "./pages/Directors";
+import Actors from "./pages/Actors";
+import Movie from "./pages/Movie";
+import ErrorPage from "./pages/ErrorPage";
 
-const routes = createBrowserRouter([
+// Export the routes array for use in tests
+export const routes = [
   {
-    path: '/',
+    path: "/",
     element: <Home />,
     errorElement: <ErrorPage />,
   },
   {
-    path: '/directors',
+    path: "/directors",
     element: <Directors />,
   },
   {
-    path: '/actors',
+    path: "/actors",
     element: <Actors />,
   },
   {
-    path: '/movie/:id',
+    path: "/movie/:id",
     element: <Movie />,
   },
-]);
+];
 
-export default routes;
+// Create the router for the app
+const router = createBrowserRouter(routes);
+
+export default router;
